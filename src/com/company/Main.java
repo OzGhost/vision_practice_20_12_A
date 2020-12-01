@@ -4,13 +4,22 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 public class Main {
     private static List<TestInput> testSuite;
+    private static boolean[] expectedResults = {false, true, false, true, false, false, true};
     public static void main(String[] args) {
         readTestSuite();
-        testSuite.forEach(item -> System.out.println(item.p.getX() + ":" + item.p.getY()));
+        for(int i = 0; i < testSuite.size(); i++){
+            boolean result = YourAnswer.isPointInsidePolygon(testSuite.get(i).p, testSuite.get(i).ps);
+            if(result == expectedResults[i]){
+                System.out.println("Case [" + i + "]: PASS");
+            } else {
+                System.out.println("Case [" + i + "]: FAIL");
+            }
+        }
     }
 
     private static void readTestSuite(){

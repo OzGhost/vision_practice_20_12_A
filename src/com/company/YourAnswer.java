@@ -8,7 +8,7 @@ package com.company;
 import java.util.List;
 
 public class YourAnswer {
-    public boolean isPointInsidePolygon(Point point, List<Point> polygonPoints){
+    public static boolean isPointInsidePolygon(Point point, List<Point> polygonPoints){
         //TODO: Your answer here
         return false;
     }
